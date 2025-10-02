@@ -1,0 +1,98 @@
+{
+  "site": {
+    "title": "Protecciones y Limitaciones para Cubanos en Argentina",
+    "description": "Guía completa sobre derechos, protecciones y limitaciones para ciudadanos cubanos que solicitaron refugio en Argentina",
+    "version": "1.0",
+    "lastUpdated": "2025-10-03",
+    "author": "MiniMax Agent",
+    "language": "es",
+    "charset": "UTF-8"
+  },
+  "content": {
+    "sections": 8,
+    "references": 18,
+    "lastReview": "2025-10-03",
+    "legalFramework": {
+      "primaryLaws": [
+        "DNU 70/2024",
+        "Decreto 366/2025",
+        "Decreto 646/2025",
+        "Ley 25.871",
+        "Ley 26.165"
+      ],
+      "validUntil": "2025-12-31"
+    }
+  },
+  "features": {
+    "search": true,
+    "darkMode": true,
+    "responsive": true,
+    "tableOfContents": true,
+    "interactiveReferences": true,
+    "keyboardShortcuts": true
+  },
+  "technical": {
+    "framework": "Vanilla JavaScript",
+    "cssFramework": "Custom CSS Grid/Flexbox",
+    "icons": "Font Awesome 6.0",
+    "fonts": "Google Fonts (Inter)",
+    "compatibility": {
+      "chrome": ">=60",
+      "firefox": ">=55",
+      "safari": ">=12",
+      "edge": ">=79"
+    }
+  },
+  "seo": {
+    "keywords": [
+      "refugio Argentina",
+      "migrantes cubanos",
+      "solicitud asilo",
+      "CONARE",
+      "DNM",
+      "residencia precaria",
+      "derechos refugiados",
+      "ley migraciones Argentina"
+    ],
+    "openGraph": {
+      "type": "website",
+      "title": "Refugio para Cubanos en Argentina - Guía Legal 2025",
+      "description": "Información actualizada sobre protecciones y limitaciones para cubanos que solicitaron refugio en Argentina. Normativa 2024-2025."
+    }
+  },
+  "analytics": {
+    "trackingEnabled": false,
+    "cookiesRequired": false,
+    "dataCollection": "none"
+  },
+  "accessibility": {
+    "wcagLevel": "AA",
+    "screenReaderCompatible": true,
+    "keyboardNavigation": true,
+    "colorContrast": "4.5:1",
+    "altTextImages": true
+  },
+  "performance": {
+    "loadTime": "<2s",
+    "bundleSize": "<500KB",
+    "externalDependencies": 2,
+    "caching": "localStorage"
+  },
+  "contact": {
+    "emergencyContacts": {
+      "CONARE": "conare@jus.gov.ar",
+      "DefensoriaGeneral": "0800-999-3342",
+      "DNM": "www.migraciones.gov.ar"
+    },
+    "legalAssistance": {
+      "free": true,
+      "provider": "Defensoría General de la Nación",
+      "languages": ["Spanish", "English"]
+    }
+  },
+  "disclaimer": {
+    "informationAccuracy": "La información está actualizada a octubre de 2025. Se recomienda verificar con fuentes oficiales.",
+    "legalAdvice": "Este sitio es informativo. Para casos específicos, consulte con un abogado especializado.",
+    "liability": "Los autores no se responsabilizan por decisiones tomadas basándose únicamente en esta información."
+  }
+}

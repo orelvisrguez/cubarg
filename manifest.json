@@ -1,0 +1,46 @@
+{
+  "name": "Refugio Argentina - Guía para Cubanos",
+  "short_name": "Refugio Argentina",
+  "description": "Guía completa sobre protecciones y limitaciones para cubanos que solicitaron refugio en Argentina",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2c5aa0",
+  "theme_color": "#2c5aa0",
+  "orientation": "portrait-primary",
+  "categories": ["education", "reference", "government"],
+  "lang": "es",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiBmaWxsPSIjMmM1YWEwIi8+CjxwYXRoIGQ9Ik05NiA0OEwxNDQgOTZMOTYgMTQ0TDQ4IDk2TDk2IDQ4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTk2IDcyTDEyMCA5Nkw5NiAxMjBMNzIgOTZMOTYgNzJaIiBmaWxsPSIjMmM1YWEwIi8+Cjwvc3ZnPgo=",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBmaWxsPSIjMmM1YWEwIi8+CjxwYXRoIGQ9Ik0yNTYgMTI4TDM4NCAyNTZMMjU2IDM4NEwxMjggMjU2TDI1NiAxMjhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjU2IDE5MkwzMjAgMjU2TDI1NiAzMjBMMTkyIDI1NkwyNTYgMTkyWiIgZmlsbD0iIzJjNWFhMCIvPgo8L3N2Zz4K",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSIjZjlmOWY5Ii8+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjMmM1YWEwIi8+Cjx0ZXh0IHg9IjY0MCIgeT0iNDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiPkd1w61hIGRlIFJlZnVnaW8gcGFyYSBDdWJhbm9zPC90ZXh0Pgo8cmVjdCB4PSI2NCIgeT0iMTIwIiB3aWR0aD0iMTE1MiIgaGVpZ2h0PSI1MDAiIGZpbGw9IndoaXRlIiByeD0iOCIvPgo8L3N2Zz4K",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Vista principal del sitio web"
+    }
+  ],
+  "features": [
+    "search",
+    "offline",
+    "dark-mode",
+    "responsive-design",
+    "accessibility"
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
