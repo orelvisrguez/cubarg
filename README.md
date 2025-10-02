@@ -6,13 +6,60 @@ Sitio web informativo sobre los derechos, protecciones y limitaciones de ciudada
 
 ## Características
 
-### ✨ Funcionalidades
+### ✨ Funcionalidades Principales
 - **Navegación intuitiva** con menú fijo y tabla de contenidos lateral
 - **Búsqueda avanzada** en todo el contenido del documento
 - **Modo oscuro/claro** para mejor experiencia de lectura
 - **Diseño responsivo** que se adapta a todos los dispositivos
 - **Referencias interactivas** con enlaces directos a las fuentes
 - **Animaciones suaves** para mejor experiencia de usuario
+
+### 🆕 Nuevas Funcionalidades Avanzadas
+
+#### 📄 Exportación y Descarga
+- **Exportar a PDF** - Genera documentos PDF profesionales con referencias
+- **Exportar a Word** - Crea documentos .docx editables
+- **Exportar a texto plano** - Extrae solo el contenido sin formato
+- **Impresión optimizada** - Versión especial para impresión física
+
+#### 🔗 Compartir y Colaborar
+- **Compartir en redes sociales** - WhatsApp, Twitter, LinkedIn
+- **Copiar enlace directo** - Fácil compartición por URL
+- **Envío por email** - Compartir por correo electrónico
+- **URLs permanentes** - Enlaces estables a secciones específicas
+
+#### 📚 Gestión de Lectura
+- **Modo lectura sin distracciones** - Vista limpia enfocada en el contenido
+- **Sistema de favoritos/bookmarks** - Guarda secciones importantes
+- **Estadísticas de lectura** - Tiempo invertido, progreso, palabras leídas
+- **Seguimiento de progreso** - Barra visual del avance en el documento
+
+#### 🎥 Modo Presentación
+- **Vista de presentación** - Navegación sección por sección
+- **Controles de navegación** - Avanzar/retroceder entre secciones
+- **Contador de secciones** - Progreso visual de la presentación
+- **Modo pantalla completa** - Experiencia inmersiva
+
+#### ♿ Accesibilidad Mejorada
+- **Ajuste de tamaño de fuente** - Control deslizante personalizable
+- **Altura de línea variable** - Mejora la legibilidad
+- **Modo alto contraste** - Para usuarios con dificultades visuales
+- **Modo foco** - Resalta la sección actual durante la lectura
+
+#### ⌨️ Atajos de Teclado
+- **Ctrl/Cmd + P** - Imprimir documento
+- **Ctrl/Cmd + S** - Exportar a PDF
+- **Ctrl/Cmd + B** - Abrir favoritos
+- **Ctrl/Cmd + R** - Activar modo lectura
+- **F11** - Modo presentación
+- **Flechas izq/der** - Navegar en modo presentación
+- **Escape** - Salir del modo presentación
+
+#### 🎯 Herramientas Flotantes
+- **Botón de acción flotante (FAB)** - Acceso rápido a herramientas
+- **Panel de estadísticas** - Información de lectura en tiempo real
+- **Panel de accesibilidad** - Controles de personalización
+- **Ir al inicio** - Navegación rápida al comienzo
 
 ### 📱 Compatibilidad
 - Navegadores modernos (Chrome, Firefox, Safari, Edge)
@@ -29,11 +76,16 @@ Sitio web informativo sobre los derechos, protecciones y limitaciones de ciudada
 
 ```
 /
-├── index.html          # Página principal con todo el contenido
-├── styles.css          # Estilos CSS completos
-├── script.js           # Funcionalidades JavaScript
-├── config.json         # Configuración del sitio
-└── README.md          # Este archivo
+├── index.html              # Página principal con todo el contenido
+├── styles.css              # Estilos CSS completos (incluyendo nuevas funcionalidades)
+├── script.js               # Funcionalidades JavaScript principales
+├── utils.js                # Utilidades y funciones auxiliares
+├── enhanced-features.js    # Nuevas funcionalidades avanzadas (PDF, compartir, etc.)
+├── sw.js                  # Service Worker para funcionalidad PWA
+├── manifest.json          # Manifiesto de la aplicación web
+├── config.json            # Configuración del sitio
+├── README.md             # Este archivo
+└── COMPLETADO.md         # Resumen de funcionalidades implementadas
 ```
 
 ## Contenido del Sitio

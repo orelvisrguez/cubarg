@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Guía completa sobre derechos, protecciones y limitaciones para ciudadanos cubanos que solicitaron refugio en Argentina. Normativa actualizada 2024-2025.">
     <meta name="keywords" content="refugio Argentina, migrantes cubanos, solicitud asilo, CONARE, DNM, residencia precaria, derechos refugiados, ley migraciones Argentina">
-    <meta name="author" content="Orelvis Rguez">
+    <meta name="author" content="MiniMax Agent">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
@@ -25,6 +25,11 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMmM1YWEwIi8+CjxwYXRoIGQ9Ik0xNiA4TDI0IDE2TDE2IDI0TDggMTZMMTYgOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNiAxMkwyMCAxNkwxNiAyMEwxMiAxNkwxNiAxMloiIGZpbGw9IiMyYzVhYTAiLz4KPC9zdmc+Cg==">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -55,6 +60,18 @@
             <div class="nav-tools">
                 <button id="search-btn" class="tool-btn" title="Buscar">
                     <i class="fas fa-search"></i>
+                </button>
+                <button id="export-btn" class="tool-btn" title="Exportar">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button id="share-btn" class="tool-btn" title="Compartir">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                <button id="reading-mode-btn" class="tool-btn" title="Modo lectura">
+                    <i class="fas fa-book-open"></i>
+                </button>
+                <button id="bookmarks-btn" class="tool-btn" title="Favoritos">
+                    <i class="fas fa-bookmark"></i>
                 </button>
                 <button id="theme-toggle" class="tool-btn" title="Cambiar tema">
                     <i class="fas fa-moon"></i>
@@ -105,6 +122,217 @@
             <a href="#evaluacion" class="toc-link">6. Evaluación Crítica</a>
             <a href="#recomendaciones" class="toc-link">7. Recomendaciones</a>
             <a href="#referencias" class="toc-link">Referencias</a>
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="export-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-download"></i> Exportar Documento</h3>
+                <button class="close-btn" onclick="closeModal('export-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="export-options">
+                    <button class="export-btn" onclick="exportToPDF()">
+                        <i class="fas fa-file-pdf"></i>
+                        <div>
+                            <strong>PDF</strong>
+                            <small>Formato estándar con referencias</small>
+                        </div>
+                    </button>
+                    <button class="export-btn" onclick="exportToWord()">
+                        <i class="fas fa-file-word"></i>
+                        <div>
+                            <strong>Word</strong>
+                            <small>Documento editable .docx</small>
+                        </div>
+                    </button>
+                    <button class="export-btn" onclick="exportToText()">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <strong>Texto Plano</strong>
+                            <small>Solo contenido sin formato</small>
+                        </div>
+                    </button>
+                    <button class="export-btn" onclick="printDocument()">
+                        <i class="fas fa-print"></i>
+                        <div>
+                            <strong>Imprimir</strong>
+                            <small>Versión optimizada para impresión</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-share-alt"></i> Compartir Documento</h3>
+                <button class="close-btn" onclick="closeModal('share-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="share-options">
+                    <button class="share-btn" onclick="shareLink()">
+                        <i class="fas fa-link"></i>
+                        <span>Copiar enlace</span>
+                    </button>
+                    <button class="share-btn" onclick="shareWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                    <button class="share-btn" onclick="shareTwitter()">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </button>
+                    <button class="share-btn" onclick="shareLinkedIn()">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </button>
+                    <button class="share-btn" onclick="shareEmail()">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </button>
+                </div>
+                <div class="share-url">
+                    <input type="text" id="share-url-input" readonly onclick="this.select()">
+                    <button onclick="copyToClipboard('share-url-input')" class="copy-btn">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bookmarks Modal -->
+    <div id="bookmarks-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-bookmark"></i> Favoritos</h3>
+                <button class="close-btn" onclick="closeModal('bookmarks-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="bookmarks-controls">
+                    <button id="add-bookmark-btn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Agregar Favorito
+                    </button>
+                </div>
+                <div id="bookmarks-list" class="bookmarks-list">
+                    <!-- Bookmarks will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reading Stats Panel -->
+    <div id="reading-stats" class="reading-stats hidden">
+        <div class="stats-header">
+            <h4><i class="fas fa-chart-line"></i> Estadísticas de Lectura</h4>
+            <button id="close-stats" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="stats-content">
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <span class="stat-value" id="reading-time">0 min</span>
+                    <span class="stat-label">Tiempo de lectura</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-percentage"></i>
+                <div>
+                    <span class="stat-value" id="progress-percent">0%</span>
+                    <span class="stat-label">Progreso</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-eye"></i>
+                <div>
+                    <span class="stat-value" id="words-read">0</span>
+                    <span class="stat-label">Palabras leídas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Presentation Mode Controls -->
+    <div id="presentation-controls" class="presentation-controls hidden">
+        <button id="prev-section" class="pres-btn" title="Sección anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <span id="section-counter" class="section-counter">1 / 7</span>
+        <button id="next-section" class="pres-btn" title="Siguiente sección">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <button id="exit-presentation" class="pres-btn exit-btn" title="Salir del modo presentación">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Accessibility Panel -->
+    <div id="accessibility-panel" class="accessibility-panel hidden">
+        <div class="panel-header">
+            <h4><i class="fas fa-universal-access"></i> Accesibilidad</h4>
+            <button id="close-accessibility" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="accessibility-option">
+                <label for="font-size-slider">Tamaño de fuente:</label>
+                <input type="range" id="font-size-slider" min="12" max="24" value="16">
+                <span id="font-size-value">16px</span>
+            </div>
+            <div class="accessibility-option">
+                <label for="line-height-slider">Altura de línea:</label>
+                <input type="range" id="line-height-slider" min="1.2" max="2.0" step="0.1" value="1.6">
+                <span id="line-height-value">1.6</span>
+            </div>
+            <div class="accessibility-option">
+                <button id="high-contrast-btn" class="accessibility-btn">
+                    <i class="fas fa-adjust"></i>
+                    Alto Contraste
+                </button>
+            </div>
+            <div class="accessibility-option">
+                <button id="focus-mode-btn" class="accessibility-btn">
+                    <i class="fas fa-crosshairs"></i>
+                    Modo Foco
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div id="fab-menu" class="fab-menu">
+        <button id="fab-main" class="fab-main" title="Herramientas">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div class="fab-options">
+            <button class="fab-option" onclick="toggleReadingStats()" title="Estadísticas">
+                <i class="fas fa-chart-line"></i>
+            </button>
+            <button class="fab-option" onclick="toggleAccessibility()" title="Accesibilidad">
+                <i class="fas fa-universal-access"></i>
+            </button>
+            <button class="fab-option" onclick="togglePresentationMode()" title="Modo Presentación">
+                <i class="fas fa-tv"></i>
+            </button>
+            <button class="fab-option" onclick="goToTop()" title="Ir arriba">
+                <i class="fas fa-arrow-up"></i>
+            </button>
         </div>
     </div>
 
@@ -992,7 +1220,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Proyecto creado por Orelvis Rguez. Todos los derechos reservados.</p>
+                    <p>&copy; 2025 Documento creado por MiniMax Agent. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
@@ -1000,5 +1228,6 @@
 
     <script src="script.js"></script>
     <script src="utils.js"></script>
+    <script src="enhanced-features.js"></script>
 </body>
 </html>
